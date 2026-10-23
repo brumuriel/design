@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
@@ -226,12 +226,12 @@ window.I18N_EN = {
 window.I18N_EN["tile.see"]="View project →";
 window.I18N_PT = {"ct.copied":"Copiado","tile.see":"Ver projeto →"};
 (function(){
-  var projects = [{"slug": "anarco", "t": "Anarco", "full": "Anarco Restaurant", "c": {"pt": "Identidade Visual · Restaurante", "en": "Visual Identity · Restaurant"}, "y": "2025", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/9b812a225993903.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "bringit", "t": "bringIT", "full": "bringIT", "c": {"pt": "Campanhas & Performance", "en": "Campaigns & Performance"}, "y": "2025", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/ded23a225885359.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "troc", "t": "TROC", "full": "TROC | Arezzo&Co", "c": {"pt": "Moda Circular · Campanhas", "en": "Circular Fashion · Campaigns"}, "y": "2023", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/a8e823169679973.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "transcriativa", "t": "Trans­criativa", "full": "@transcriativa", "c": {"pt": "Mídias Sociais", "en": "Social Media"}, "y": "2020", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/191b45101455155.Y3JvcCwxNDE2LDExMDcsNTYsNDU.png"}, {"slug": "pontomais", "t": "Pontomais", "full": "Pontomais", "c": {"pt": "Branding · SaaS", "en": "Branding · SaaS"}, "y": "2019", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/f271a289563973.Y3JvcCwxMzgwLDEwNzksNzgsMTM.png"}, {"slug": "startup-weekend-women", "t": "SW Women", "full": "Startup Weekend Women Curitiba", "c": {"pt": "Identidade de Evento", "en": "Event Identity"}, "y": "2019", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/c9e49783041361.Y3JvcCw4MDgsNjMyLDE3MCww.png"}];
+  var projects = [{"slug": "meia-luz", "t": "Meia-Luz", "full": "Meia-Luz", "c": {"pt": "Branding · Velas aromáticas", "en": "Branding · Scented candles"}, "y": "2026", "cover": "ml-mockup-vela.webp"},{"slug": "santo-alimento", "t": "Santo Alimento", "full": "Santo Alimento × Santa Hora", "c": {"pt": "Campanha · Indústria de alimentos", "en": "Campaign · Food industry"}, "y": "2026", "cover": "sa-feed-01.webp"},{"slug": "anarco", "t": "Anarco", "full": "Anarco Restaurant", "c": {"pt": "Identidade Visual · Restaurante", "en": "Visual Identity · Restaurant"}, "y": "2025", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/9b812a225993903.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "bringit", "t": "bringIT", "full": "bringIT", "c": {"pt": "Campanhas & Performance", "en": "Campaigns & Performance"}, "y": "2025", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/ded23a225885359.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "troc", "t": "TROC", "full": "TROC | Arezzo&Co", "c": {"pt": "Moda Circular · Campanhas", "en": "Circular Fashion · Campaigns"}, "y": "2023", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/a8e823169679973.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "transcriativa", "t": "Trans­criativa", "full": "@transcriativa", "c": {"pt": "Mídias Sociais", "en": "Social Media"}, "y": "2020", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/191b45101455155.Y3JvcCwxNDE2LDExMDcsNTYsNDU.png"}, {"slug": "pontomais", "t": "Pontomais", "full": "Pontomais", "c": {"pt": "Branding · SaaS", "en": "Branding · SaaS"}, "y": "2019", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/f271a289563973.Y3JvcCwxMzgwLDEwNzksNzgsMTM.png"}, {"slug": "startup-weekend-women", "t": "SW Women", "full": "Startup Weekend Women Curitiba", "c": {"pt": "Identidade de Evento", "en": "Event Identity"}, "y": "2019", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/c9e49783041361.Y3JvcCw4MDgsNjMyLDE3MCww.png"}];
   window.BM_render = function(lang){
     var t = window.BM ? window.BM.t : function(k){return k};
     var html = "";
     for (var r=0;r<2;r++) projects.forEach(function(p){
-      html += '<a class="tile" href="projetos/'+p.slug+'.html"'+(r?' aria-hidden="true" tabindex="-1"':'')+'>'+
+      html += '<a class="tile" href="'+p.slug+'.html"'+(r?' aria-hidden="true" tabindex="-1"':'')+'>'+
         '<img class="cover" src="'+p.cover+'" alt="" loading="lazy">'+
         '<span class="mono"><span>'+p.c[lang]+'</span><span>'+p.y+'</span></span>'+
         '<span class="big">'+p.t+'</span>'+
@@ -239,11 +239,11 @@ window.I18N_PT = {"ct.copied":"Copiado","tile.see":"Ver projeto →"};
     });
     document.getElementById("track").innerHTML = html;
     document.getElementById("worklist").innerHTML = projects.map(function(p){
-      return '<li><a href="projetos/'+p.slug+'.html"><span class="t">'+p.full+'</span><span class="c">'+p.c[lang]+'</span><span class="arr">'+p.y+' →</span></a></li>';
+      return '<li><a href="'+p.slug+'.html"><span class="t">'+p.full+'</span><span class="c">'+p.c[lang]+'</span><span class="arr">'+p.y+' →</span></a></li>';
     }).join("");
   };
 })();
 </script>
-<script src="assets/site.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

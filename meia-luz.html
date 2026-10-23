@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meia-Luz — Bruna Muriel</title>
+<meta name="description" content="Branding da Meia-Luz, marca de velas aromáticas: logo com Medusa, paleta, elementos gráficos e rótulo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  /* Meia-Luz palette */
+  --ameixa:#643336;
+  --ameixa-escura:#3f2022;
+  --creme:#f9e1b9;
+  --chama:#ef5614;
+  --ambar:#ff9448;
+  --tijolo:#bb3c2b;
+  --lavanda:#d7b1b4;
+  --linho:#cebd9f;
+  --pessego:#ffcba8;
+  --oliva:#3b3a17;
+
+  --ground:#2e1718;
+  --slide:var(--ameixa);
+  --ink:var(--creme);
+  --ink-soft:#e2c3a6;
+  --ink-mute:#b48d82;
+  --line:rgba(249,225,185,.18);
+  --grain:.09;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --gutter:clamp(16px,3vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+img{max-width:100%;display:block}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:14px var(--gutter);font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+  background:linear-gradient(var(--ground) 55%,transparent)}
+.bar a{text-decoration:none;color:var(--ink-soft)} .bar a:hover{color:var(--ink)}
+.bar nav{display:flex;gap:18px;align-items:center}
+.lang{font:inherit;text-transform:uppercase;letter-spacing:.06em;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 4px;cursor:pointer;display:flex;gap:2px}
+.lang span{padding:2px 8px;border-radius:999px;color:var(--ink-mute);transition:all .25s}
+.lang span.on{background:var(--ink);color:var(--ameixa)}
+
+.deck{display:flex;flex-direction:column;gap:clamp(10px,1.4vw,18px);padding:8px var(--gutter) 64px;max-width:1480px;margin-inline:auto}
+
+.slide{position:relative;background:var(--slide);border-radius:6px;overflow:hidden;aspect-ratio:16/10;max-width:100%;display:grid;
+  padding:clamp(18px,2.6vw,40px);padding-bottom:clamp(40px,4.4vw,64px)}
+.foot{position:absolute;left:clamp(18px,2.6vw,40px);right:clamp(18px,2.6vw,40px);bottom:clamp(14px,1.6vw,22px);z-index:2;
+  display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:clamp(9px,.8vw,11px);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.label{font-family:var(--mono);font-size:clamp(10px,.85vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute)}
+.mega{margin:0;font-weight:800;font-variation-settings:"wdth" 125;text-transform:uppercase;letter-spacing:-.045em;line-height:.84}
+.soft{font-weight:300;font-variation-settings:"wdth" 62;letter-spacing:-.02em}
+.copy{margin:0;font-size:clamp(12px,1.08vw,16px);line-height:1.55;max-width:52ch}
+.rule{border:0;border-top:1px solid var(--line);margin:0}
+
+/* 01 cover */
+.s-cover{background:var(--ameixa-escura);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(18px,3vw,48px)}
+.s-cover .left{display:flex;flex-direction:column;justify-content:space-between;height:100%;gap:24px}
+.s-cover .mega{font-size:clamp(52px,9.4vw,150px)}
+.s-cover .mega .soft{color:var(--ambar)}
+.s-cover .logo{justify-self:center;width:min(100%,46vh,520px);aspect-ratio:1}
+.s-cover .halo{position:absolute;right:-8%;top:50%;width:62%;aspect-ratio:1;transform:translateY(-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,148,72,.30),rgba(239,86,20,.10) 45%,transparent 70%);pointer-events:none}
+.s-cover .logo,.s-cover .left{position:relative;z-index:1}
+
+/* 02 intro */
+.s-intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,48px)}
+.s-intro .left{display:flex;flex-direction:column;justify-content:space-between;gap:18px;min-width:0}
+.s-intro .mega{font-size:clamp(44px,7vw,112px)}
+.specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 20px}
+.specs b{display:block;font-weight:700;font-size:clamp(11px,.95vw,14px);text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
+.specs span{display:block;font-size:clamp(11px,.95vw,14px);color:var(--ink-soft);line-height:1.4}
+.card-logo{background:var(--creme);border-radius:clamp(6px,.9vw,14px);display:grid;place-items:center;padding:8%;min-height:0}
+.card-logo img{width:100%;max-width:520px;height:100%;object-fit:contain}
+
+/* 03 versions */
+.s-vers{grid-template-rows:auto 1fr;gap:clamp(14px,2vw,28px)}
+.s-vers .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.s-vers .mega{font-size:clamp(30px,4.6vw,72px)}
+.vers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.2vw,18px);min-height:0}
+.vers figure{margin:0;border-radius:clamp(6px,.9vw,14px);display:grid;grid-template-rows:1fr auto;padding:clamp(14px,2vw,28px);gap:10px;min-height:0}
+.vers figure img{width:100%;height:100%;object-fit:contain;min-height:0}
+.vers figcaption{font-family:var(--mono);font-size:clamp(9px,.8vw,11px);letter-spacing:.08em;text-transform:uppercase}
+.v1{background:var(--creme);color:var(--oliva)}
+.v2{background:var(--ameixa-escura);color:var(--creme);border:1px solid var(--line)}
+.v3{background:var(--ambar);color:var(--ameixa)}
+
+/* 04 palette */
+.s-pal{background:var(--ameixa-escura);grid-template-rows:auto 1fr;gap:clamp(14px,2vw,28px)}
+.s-pal .mega{font-size:clamp(30px,4.6vw,72px)}
+.sw{display:grid;grid-template-columns:2fr 1.3fr 1fr 1fr 1fr 1fr .9fr .9fr;gap:6px;min-height:0}
+.sw div{border-radius:6px;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(8px,1vw,14px);gap:2px;min-height:110px}
+.sw b{font-weight:600;font-size:clamp(11px,1vw,15px);line-height:1.15}
+.sw span{font-family:var(--mono);font-size:clamp(9px,.75vw,11px);letter-spacing:.04em;opacity:.8;text-transform:uppercase}
+.sw .ink-d{color:var(--ameixa-escura)} .sw .ink-l{color:var(--creme)}
+
+/* 05 elements */
+.s-el{background:var(--ameixa-escura);grid-template-rows:auto 1fr;gap:clamp(14px,2vw,28px)}
+.s-el .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.s-el .mega{font-size:clamp(30px,4.6vw,72px)}
+.s-el .head .copy{color:var(--ink-soft);max-width:46ch}
+.formas{min-height:0;display:grid;place-items:center}
+.formas img{width:100%;height:100%;object-fit:contain;border-radius:clamp(4px,.6vw,10px)}
+
+/* 07 glass */
+.s-glass{background:var(--lavanda);color:var(--ameixa-escura);grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:clamp(18px,3vw,48px)}
+.s-glass .txt{display:flex;flex-direction:column;gap:14px;align-self:start}
+.s-glass .mega{font-size:clamp(46px,8vw,128px)}
+.s-glass .mega .soft{color:var(--tijolo)}
+.s-glass .label,.s-glass .foot{color:var(--ameixa)}
+.s-glass .glass{width:100%;height:100%;object-fit:contain;min-height:0}
+
+/* 06 mockup */
+.s-mock{padding:0;background:#111}
+.s-mock img{width:100%;height:100%;object-fit:cover}
+.s-mock .cap{position:absolute;left:clamp(18px,2.6vw,40px);top:clamp(18px,2.6vw,40px);display:flex;flex-direction:column;gap:8px;max-width:34ch}
+.s-mock .cap .mega{font-size:clamp(26px,3.8vw,60px)}
+.s-mock .cap p{margin:0;font-size:clamp(12px,1vw,15px);color:var(--ink-soft)}
+.s-mock .foot{color:#9a8a80}
+
+/* 07 end */
+.s-end{background:var(--chama);color:var(--ameixa-escura);align-content:space-between;grid-template-rows:1fr auto}
+.s-end .mega{font-size:clamp(54px,13vw,190px);align-self:center}
+.s-end .contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-top:1px solid rgba(63,32,34,.35);padding-top:16px;font-size:clamp(12px,1.05vw,16px)}
+.s-end .contacts .label,.s-end .foot{color:var(--ameixa)}
+.s-end .contacts .label{display:block;margin-bottom:4px}
+
+.rise{animation:rise .9s cubic-bezier(.2,.7,.1,1) both}
+@keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
+
+@media (max-width:860px){
+  .slide{aspect-ratio:auto;padding-bottom:56px}
+  .s-cover,.s-intro,.s-el{grid-template-columns:1fr}
+  .s-cover .logo{width:min(80%,360px)}
+  .card-logo{aspect-ratio:1}
+  .vers{grid-template-columns:1fr}
+  .vers figure{aspect-ratio:4/3}
+  .sw{grid-template-columns:1fr 1fr}
+  .s-glass{grid-template-columns:1fr}
+  .s-glass .glass{height:auto}
+  .formas img{height:auto}
+  .s-mock{aspect-ratio:auto}
+  .s-mock img{aspect-ratio:1408/768;height:auto}
+  .s-mock .cap{position:static;padding:20px 18px 0}
+  .s-end{min-height:min(110vw,520px)}
+  .s-end .contacts{grid-template-columns:1fr}
+  .specs{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.rise{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a href="index.html" data-i18n="nav.back">← Início</a>
+  <nav>
+    <a href="index.html#trabalhos" data-i18n="nav.work">Trab.</a>
+    <button class="lang" id="lang" type="button" aria-label="Mudar idioma / Change language"><span data-l="pt" class="on">PT</span><span data-l="en">EN</span></button>
+  </nav>
+</header>
+
+<main class="deck">
+
+  <!-- 01 -->
+  <section class="slide s-cover" aria-label="Meia-Luz">
+    <div class="halo" aria-hidden="true"></div>
+    <div class="left">
+      <span class="label" data-i18n="cv.label">Branding · velas aromáticas</span>
+      <h1 class="mega rise">Meia<span class="soft">—</span><br>Luz</h1>
+      <p class="copy" data-i18n="cv.copy">Uma marca de velas que acende o lado místico do cotidiano: a Medusa como guardiã da chama, em vez de ameaça.</p>
+    </div>
+    <img class="logo" src="ml-logo-creme.svg" alt="Logo Meia-Luz: emblema em arco com Medusa, vela e folhagens">
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 01/08</span></div>
+  </section>
+
+  <!-- 02 -->
+  <section class="slide s-intro" aria-label="Sobre o projeto">
+    <div class="left">
+      <h2 class="mega">Meia-<br>Luz</h2>
+      <div class="specs">
+        <div><b data-i18n="sp.svc">Serviços</b><span data-i18n-html="sp.svc.v">Identidade visual<br>Logo<br>Elementos de apoio<br>Rótulo</span></div>
+        <div><b data-i18n="sp.seg">Segmento</b><span data-i18n-html="sp.seg.v">Velas aromáticas<br>Casa &amp; bem-estar</span></div>
+        <div><b data-i18n="sp.year">Ano</b><span>2026</span></div>
+      </div>
+      <hr class="rule">
+      <p class="copy" data-i18n="in.copy">O briefing pedia algo cool, mas aconchegante. A resposta foi reinterpretar a Medusa: em vez do olhar que petrifica, uma figura serena que segura a vela entre folhagens, dentro de um arco que lembra uma janela à meia-luz. A paleta vem do fim de tarde, com ameixa, cera, âmbar e chama, e os elementos de apoio exploram o místico, a cobra, a vela e a natureza.</p>
+    </div>
+    <div class="card-logo"><img src="ml-logo-oliva.svg" alt="Logo Meia-Luz em oliva sobre creme"></div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 02/08</span></div>
+  </section>
+
+  <!-- 03 -->
+  <section class="slide s-vers" aria-label="Versões do logo">
+    <div class="head">
+      <div><span class="label" data-i18n="vs.label">Logo · versões de cor</span><h3 class="mega" data-i18n="vs.title">Emblema</h3></div>
+      <p class="copy" style="color:var(--ink-soft);max-width:40ch" data-i18n="vs.copy">Desenhado em traço único para funcionar do rótulo pequeno ao carimbo, em fundo claro, escuro ou colorido.</p>
+    </div>
+    <div class="vers">
+      <figure class="v1"><img src="ml-logo-oliva.svg" alt="Logo oliva sobre creme"><figcaption data-i18n="vs.1">Oliva sobre cera</figcaption></figure>
+      <figure class="v2"><img src="ml-logo-creme.svg" alt="Logo creme sobre ameixa"><figcaption data-i18n="vs.2">Cera sobre ameixa</figcaption></figure>
+      <figure class="v3"><img src="ml-logo-ameixa.svg" alt="Logo ameixa sobre âmbar"><figcaption data-i18n="vs.3">Ameixa sobre âmbar</figcaption></figure>
+    </div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 03/08</span></div>
+  </section>
+
+  <!-- 04 -->
+  <section class="slide s-pal" aria-label="Paleta">
+    <div><span class="label" data-i18n="pl.label">Cores</span><h3 class="mega" data-i18n="pl.title">Paleta à meia-luz</h3></div>
+    <div class="sw">
+      <div class="ink-l" style="background:var(--ameixa)"><b data-i18n="c.ameixa">Ameixa</b><span>#643336</span></div>
+      <div class="ink-d" style="background:var(--creme)"><b data-i18n="c.cera">Cera</b><span>#F9E1B9</span></div>
+      <div class="ink-d" style="background:var(--chama)"><b data-i18n="c.chama">Chama</b><span>#EF5614</span></div>
+      <div class="ink-d" style="background:var(--ambar)"><b data-i18n="c.ambar">Âmbar</b><span>#FF9448</span></div>
+      <div class="ink-l" style="background:var(--tijolo)"><b data-i18n="c.tijolo">Tijolo</b><span>#BB3C2B</span></div>
+      <div class="ink-d" style="background:var(--lavanda)"><b data-i18n="c.lavanda">Lavanda seca</b><span>#D7B1B4</span></div>
+      <div class="ink-d" style="background:var(--linho)"><b data-i18n="c.linho">Linho</b><span>#CEBD9F</span></div>
+      <div class="ink-l" style="background:var(--oliva)"><b data-i18n="c.oliva">Oliva</b><span>#3B3A17</span></div>
+    </div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 04/08</span></div>
+  </section>
+
+  <!-- 05 -->
+  <section class="slide s-el" aria-label="Elementos gráficos">
+    <div class="head">
+      <div><span class="label" data-i18n="el.label">Elementos de apoio</span><h3 class="mega" data-i18n-html="el.title">Jardim<br><span class='soft'>à meia-luz</span></h3></div>
+      <p class="copy" data-i18n="el.copy">Formas orgânicas recortadas à mão: folhagens, flores, sol e a espiral da serpente. Em blocos de cor da paleta, elas se combinam como azulejos e viram moldura para rótulos, caixas, tags e redes sociais.</p>
+    </div>
+    <div class="formas"><img src="ml-formas.svg" alt="Painel de elementos gráficos Meia-Luz: folhagens, flores, sol, espiral e ramo florido em blocos de cor" width="2222" height="1178"></div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 05/08</span></div>
+  </section>
+
+  <!-- 06 -->
+  <section class="slide s-mock" aria-label="Rótulo">
+    <img src="ml-mockup-vela.webp" alt="Vela Meia-Luz Lavanda em pote de cimento com rótulo de azulejos" width="1408" height="768">
+    <div class="cap">
+      <span class="label" data-i18n="mk.label">Aplicação · rótulo</span>
+      <h3 class="mega" data-i18n-html="mk.title">Pote de<br><span class='soft'>cimento</span></h3>
+      <p data-i18n="mk.copy">O emblema no centro, emoldurado pelos azulejos de formas: cada fragrância ganha a sua combinação de cores.</p>
+    </div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 06/08</span></div>
+  </section>
+
+  <!-- 07 -->
+  <section class="slide s-glass" aria-label="Vela Lavanda">
+    <div class="txt">
+      <span class="label" data-i18n="gl.label">Aplicação · copo de vidro</span>
+      <h3 class="mega" data-i18n-html="gl.title">Lavan<br><span class='soft'>da</span></h3>
+      <p class="copy" data-i18n="gl.copy">Na versão em vidro, a cera tingida faz o papel do rótulo: o logo em oliva é impresso direto no copo, e a cor da vela anuncia a fragrância.</p>
+    </div>
+    <img class="glass" src="ml-mockup-lavanda.webp" alt="Vela Meia-Luz Lavanda em copo de vidro com cera lilás" width="1400" height="949">
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 07/08</span></div>
+  </section>
+
+  <!-- 08 -->
+  <section class="slide s-end" aria-label="Contato">
+    <h2 class="mega" data-i18n="end.title">Obrigada</h2>
+    <div class="contacts">
+      <div><span class="label">E-mail</span>bmurieldesign@gmail.com</div>
+      <div><span class="label">WhatsApp</span>+55 (41) 99777-9254</div>
+      <div><span class="label">Behance</span><a href="https://www.behance.net/brunamuriel" target="_blank" rel="noopener">behance.net/brunamuriel</a></div>
+    </div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 08/08</span></div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var EN = {
+    "nav.back":"← Home","nav.work":"Work.","foot.pf":"Portfolio","foot.pg":"Page",
+    "cv.label":"Branding · scented candles",
+    "cv.copy":"A candle brand that lights up the mystical side of everyday life: Medusa as the keeper of the flame, not a threat.",
+    "sp.svc":"Services","sp.svc.v":"Visual identity<br>Logo<br>Supporting graphics<br>Label",
+    "sp.seg":"Industry","sp.seg.v":"Scented candles<br>Home &amp; wellbeing","sp.year":"Year",
+    "in.copy":"The brief asked for something cool but cozy. The answer was to reimagine Medusa: instead of a petrifying gaze, a serene figure holding a candle among leaves, framed by an arch that recalls a window in half-light. The palette comes from late afternoon — plum, wax, amber and flame — and the supporting graphics explore the mystical, the serpent, the candle and nature.",
+    "vs.label":"Logo · colour versions","vs.title":"Emblem",
+    "vs.copy":"Drawn in a single line weight so it works from a small label to a stamp, on light, dark or coloured grounds.",
+    "vs.1":"Olive on wax","vs.2":"Wax on plum","vs.3":"Plum on amber",
+    "pl.label":"Colour","pl.title":"Half-light palette",
+    "c.ameixa":"Plum","c.cera":"Wax","c.chama":"Flame","c.ambar":"Amber","c.tijolo":"Brick","c.lavanda":"Dried lavender","c.linho":"Linen","c.oliva":"Olive",
+    "el.label":"Supporting graphics","el.title":"Garden<br><span class='soft'>in half-light</span>",
+    "el.copy":"Hand-cut organic shapes: foliage, flowers, a sun and the serpent's spiral. Set in colour blocks from the palette, they combine like tiles and frame labels, boxes, tags and social media.",
+    "mk.label":"Application · label","mk.title":"Concrete<br><span class='soft'>jar</span>",
+    "mk.copy":"The emblem at the centre, framed by the shape tiles: each fragrance gets its own colour combination.",
+    "gl.label":"Application · glass","gl.title":"Laven<br><span class='soft'>der</span>",
+    "gl.copy":"In the glass version the tinted wax does the label's job: the olive logo is printed straight on the glass, and the candle's colour announces the fragrance.",
+    "end.title":"Thank you"
+  };
+  var PT = {};
+  document.querySelectorAll("[data-i18n]").forEach(function(el){ PT[el.dataset.i18n] = el.textContent; });
+  document.querySelectorAll("[data-i18n-html]").forEach(function(el){ PT[el.dataset.i18nHtml] = el.innerHTML; });
+  var lang = "pt";
+  try { var s = localStorage.getItem("bm-lang"); if (s === "en" || s === "pt") lang = s; } catch(e){}
+  function apply(){
+    document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+    document.querySelectorAll("[data-i18n]").forEach(function(el){ var k=el.dataset.i18n; el.textContent = (lang==="en"&&EN[k])||PT[k]; });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){ var k=el.dataset.i18nHtml; el.innerHTML = (lang==="en"&&EN[k])||PT[k]; });
+    document.querySelectorAll("#lang span").forEach(function(s){ s.classList.toggle("on", s.dataset.l === lang); });
+  }
+  document.getElementById("lang").addEventListener("click", function(){
+    lang = lang === "pt" ? "en" : "pt";
+    try { localStorage.setItem("bm-lang", lang); } catch(e){}
+    apply();
+  });
+  apply();
+
+  var S=160,c=document.createElement("canvas");c.width=S;c.height=S;
+  var ctx=c.getContext("2d"),img=ctx.createImageData(S,S),frames=[];
+  for(var f=0;f<4;f++){var d=img.data;for(var i=0;i<d.length;i+=4){var v=Math.random()*255|0;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255;}ctx.putImageData(img,0,0);frames.push(c.toDataURL());}
+  var layer=document.createElement("div");layer.setAttribute("aria-hidden","true");
+  layer.style.cssText="position:fixed;inset:0;pointer-events:none;z-index:50;opacity:var(--grain);mix-blend-mode:overlay;background-size:"+S+"px "+S+"px;background-image:url("+frames[0]+")";
+  document.body.appendChild(layer);
+  if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){
+    var k=0;setInterval(function(){k=(k+1)%frames.length;layer.style.backgroundImage="url("+frames[k]+")";layer.style.backgroundPosition=(Math.random()*S|0)+"px "+(Math.random()*S|0)+"px";},110);
+  }
+})();
+</script>
+</body>
+</html>

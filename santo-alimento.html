@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Santo Alimento — Bruna Muriel</title>
+<meta name="description" content="Campanha de lançamento Santo Alimento × Santa Hora para a Anuga 2026: flyer, social media e landing page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --ground:#0a0a0b;
+  --slide:#141416;
+  --slide-2:#1b1b1e;
+  --ink:#ece9e3;
+  --ink-soft:#a7a39c;
+  --ink-mute:#6d6a65;
+  --line:#2a2a2e;
+  --paper:#ece9e3;
+  --paper-ink:#0f0f10;
+  --grain:.075;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --gutter:clamp(16px,3vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+img{max-width:100%;display:block}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:14px var(--gutter);font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+  background:linear-gradient(var(--ground) 55%,transparent)}
+.bar a{text-decoration:none;color:var(--ink-soft)} .bar a:hover{color:var(--ink)}
+.bar nav{display:flex;gap:18px;align-items:center}
+.lang{font:inherit;text-transform:uppercase;letter-spacing:.06em;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 4px;cursor:pointer;display:flex;gap:2px}
+.lang span{padding:2px 8px;border-radius:999px;color:var(--ink-mute);transition:all .25s}
+.lang span.on{background:var(--ink);color:var(--ground)}
+
+.deck{display:flex;flex-direction:column;gap:clamp(10px,1.4vw,18px);padding:8px var(--gutter) 64px;max-width:1480px;margin-inline:auto}
+
+/* slide */
+.slide{position:relative;background:var(--slide);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  aspect-ratio:16/10;max-width:100%;display:grid;padding:clamp(18px,2.6vw,40px);padding-bottom:clamp(40px,4.4vw,64px)}
+.foot{position:absolute;left:clamp(18px,2.6vw,40px);right:clamp(18px,2.6vw,40px);bottom:clamp(14px,1.6vw,22px);
+  display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:clamp(9px,.8vw,11px);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+.label{font-family:var(--mono);font-size:clamp(10px,.85vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute)}
+.mega{margin:0;font-weight:800;font-variation-settings:"wdth" 125;text-transform:uppercase;letter-spacing:-.045em;line-height:.84}
+.shot{border-radius:clamp(6px,.9vw,14px);overflow:hidden;background:var(--slide-2)}
+.shot img{width:100%;height:100%;object-fit:cover}
+
+/* 01 cover */
+.s-cover{background:var(--paper);color:var(--paper-ink);border-color:var(--paper);grid-template-rows:auto 1fr auto;align-content:space-between}
+.s-cover .top{display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:clamp(10px,.9vw,13px);letter-spacing:.08em;text-transform:uppercase}
+.s-cover .mark{align-self:center;justify-self:center;font-weight:300;font-variation-settings:"wdth" 62;font-size:clamp(60px,11vw,170px);line-height:1}
+.s-cover .mega{font-size:clamp(54px,13.4vw,196px);align-self:end}
+.s-cover .foot{color:#6b675f}
+.s-cover .mega .soft{font-weight:300;font-variation-settings:"wdth" 62;letter-spacing:-.02em}
+
+/* 02 divider */
+.s-div{align-content:end}
+.s-div .mega{font-size:clamp(46px,10vw,150px)}
+.s-div .mega span{display:block}
+.s-div .mega .soft{font-weight:300;font-variation-settings:"wdth" 62;color:var(--ink-soft);letter-spacing:-.02em}
+.s-div .count{position:absolute;top:clamp(18px,2.6vw,40px);right:clamp(18px,2.6vw,40px)}
+
+/* 03 intro */
+.s-intro{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(18px,3vw,48px)}
+.s-intro .left{display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-width:0}
+.s-intro .mega{font-size:clamp(40px,6.6vw,104px)}
+.specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 20px}
+.specs b{display:block;font-weight:700;font-size:clamp(11px,.95vw,14px);text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
+.specs span{display:block;font-size:clamp(11px,.95vw,14px);color:var(--ink-soft);line-height:1.4}
+.rule{border:0;border-top:1px solid var(--line);margin:0}
+.copy{margin:0;font-size:clamp(12px,1.08vw,16px);line-height:1.5;max-width:52ch;color:var(--ink)}
+.copy em{color:var(--ink-soft)}
+.s-intro .shot{height:100%;min-height:0}
+.s-intro .shot img{object-position:50% 30%}
+
+/* 04 flyer */
+.s-flyer{background:#0f1a0d url("sa-fundo.webp") center/cover;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:clamp(14px,2.4vw,36px)}
+.s-flyer .txt{align-self:start;display:flex;flex-direction:column;gap:14px;max-width:30ch}
+.s-flyer .txt .mega{font-size:clamp(28px,4vw,62px)}
+.s-flyer .txt p{margin:0;font-size:clamp(12px,1.05vw,15px);color:#d6e2cf}
+.s-flyer .label,.s-flyer .foot{color:#a9bba1}
+.a5{height:min(100%,calc((100vw - 2 * var(--gutter)) * .44));aspect-ratio:1000/1418;box-shadow:0 30px 60px -20px rgba(0,0,0,.65),0 2px 0 rgba(255,255,255,.06) inset;border-radius:4px;overflow:hidden}
+.a5 img{width:100%;height:100%;object-fit:cover}
+.a5.back{transform:translateY(6%) rotate(2deg)}
+.a5.front{transform:rotate(-2deg)}
+
+/* 05 feed row */
+.s-feed{grid-template-rows:auto 1fr;gap:clamp(14px,2vw,28px)}
+.s-feed .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.s-feed .mega{font-size:clamp(30px,4.6vw,72px)}
+.s-feed .head p{margin:0;max-width:40ch;font-size:clamp(12px,1vw,15px);color:var(--ink-soft)}
+.row4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.2vw,18px);align-items:center;min-height:0}
+.row4 .shot{aspect-ratio:4/5}
+.row4 .shot:nth-child(even){transform:translateY(-8%)}
+
+/* 06 launch */
+.s-launch{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(18px,3vw,48px)}
+.s-launch .left{display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.s-launch .mega{font-size:clamp(34px,5.4vw,86px)}
+.s-launch .mega .soft{font-weight:300;font-variation-settings:"wdth" 62;color:var(--ink-soft);letter-spacing:-.02em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.2vw,18px);align-items:center;min-height:0}
+.pair .shot{aspect-ratio:4/5}
+.facts{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:clamp(12px,1vw,15px)}
+.facts div span:last-child{font-family:var(--mono);font-size:.85em;color:var(--ink-soft);text-align:right}
+
+/* 07 landing page */
+.s-lp{grid-template-columns:minmax(0,1.5fr) minmax(0,.62fr) minmax(0,.9fr);gap:clamp(14px,2.2vw,32px);align-items:stretch}
+.browser{border:1px solid var(--line);border-radius:clamp(6px,.9vw,12px);overflow:hidden;background:var(--slide-2);display:flex;flex-direction:column;align-self:center}
+.browser .chrome{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--line)}
+.browser .chrome i{width:8px;height:8px;border-radius:50%;background:#3a3a40;display:block}
+.browser .chrome span{margin-left:8px;font-family:var(--mono);font-size:10px;color:var(--ink-mute);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.scroller{position:relative;overflow:hidden;border-radius:clamp(6px,.9vw,12px);border:1px solid var(--line);min-height:0}
+.scroller img{width:100%;height:auto;transform:translateY(0);transition:transform 9s cubic-bezier(.45,.05,.4,1)}
+.scroller:hover img,.scroller:focus-within img{transform:translateY(calc(-100% + var(--h,300px)))}
+.scroller .hint{position:absolute;left:8px;bottom:8px;background:rgba(10,10,11,.75);padding:4px 8px;border-radius:999px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.s-lp .right{display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.s-lp .mega{font-size:clamp(30px,4.4vw,70px)}
+
+/* 08 end */
+.s-end{background:var(--paper);color:var(--paper-ink);border-color:var(--paper);align-content:space-between;grid-template-rows:1fr auto}
+.s-end .mega{font-size:clamp(54px,13vw,190px);align-self:center}
+.s-end .contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-top:1px solid #c9c5bd;padding-top:16px;font-size:clamp(12px,1.05vw,16px)}
+.s-end .contacts .label{color:#6b675f;display:block;margin-bottom:4px}
+.s-end .foot{color:#6b675f}
+
+.rise{animation:rise .9s cubic-bezier(.2,.7,.1,1) both}
+@keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
+
+/* tablet / phone: slides become natural-height panels */
+@media (max-width:860px){
+  .slide{aspect-ratio:auto;padding-bottom:56px}
+  .s-cover{min-height:min(120vw,560px)}
+  .s-div{min-height:60vw}
+  .s-intro,.s-launch,.s-lp{grid-template-columns:1fr}
+  .s-intro .shot{aspect-ratio:4/5;height:auto}
+  .s-flyer{grid-template-columns:1fr 1fr}
+  .s-flyer .txt{grid-column:1 / -1;max-width:none}
+  .a5{height:auto;width:100%}
+  .row4{grid-template-columns:1fr 1fr}
+  .row4 .shot:nth-child(even){transform:none}
+  .scroller{height:420px}
+  .s-end{min-height:min(110vw,520px)}
+  .s-end .contacts{grid-template-columns:1fr}
+  .specs{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .rise{animation:none}
+  .scroller img{transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a href="index.html" data-i18n="nav.back">← Início</a>
+  <nav>
+    <a href="index.html#trabalhos" data-i18n="nav.work">Trab.</a>
+    <button class="lang" id="lang" type="button" aria-label="Mudar idioma / Change language"><span data-l="pt" class="on">PT</span><span data-l="en">EN</span></button>
+  </nav>
+</header>
+
+<main class="deck">
+
+  <!-- 01 -->
+  <section class="slide s-cover" aria-label="Capa">
+    <div class="top"><span>Bruna Muriel</span><span data-i18n="cover.role">Designer Gráfica · Curitiba</span><span data-i18n="cover.ed">Edição 2026</span></div>
+    <div class="mark" aria-hidden="true">©</div>
+    <h1 class="mega rise">Portf<span class="soft">ó</span>lio</h1>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 01/08</span></div>
+  </section>
+
+  <!-- 02 -->
+  <section class="slide s-div" aria-label="Seção">
+    <span class="label count" data-i18n="div.count">01 projeto em destaque</span>
+    <h2 class="mega"><span data-i18n="div.a">Design para</span><span class="soft" data-i18n="div.b">performance</span></h2>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 02/08</span></div>
+  </section>
+
+  <!-- 03 -->
+  <section class="slide s-intro" aria-label="Santo Alimento">
+    <div class="left">
+      <h2 class="mega">Santo<br>Alimento</h2>
+      <div class="specs">
+        <div><b data-i18n="sp.svc">Serviços</b><span data-i18n-html="sp.svc.v">Campanha de lançamento<br>Social media<br>Flyer A5<br>Landing page</span></div>
+        <div><b data-i18n="sp.seg">Segmento</b><span data-i18n-html="sp.seg.v">Indústria de alimentos<br>Food service</span></div>
+        <div><b data-i18n="sp.year">Ano</b><span>2026</span></div>
+      </div>
+      <hr class="rule">
+      <p class="copy" data-i18n-html="intro.copy">A Santo Alimento é uma indústria que usa tecnologia de esterilização para entregar pratos prontos sem conservantes, sem freezer e com até 2 anos de validade. Para o lançamento da linha Santa Hora na <b>Anuga Select Brasil 2026</b>, criei uma campanha que traduz essa promessa em uma frase só: <em>sabor de feito agora, inteligência no estoque.</em> O verde profundo e a comida em movimento dão apetite; os selos claros respondem às objeções do comprador.</p>
+    </div>
+    <div class="shot"><img src="sa-feed-01.webp" alt="Post de feed Santo Alimento: Sabor de feito agora. Inteligência no estoque." width="1080" height="1350"></div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 03/08</span></div>
+  </section>
+
+  <!-- 04 -->
+  <section class="slide s-flyer" aria-label="Flyer A5">
+    <div class="txt">
+      <span class="label" data-i18n="fl.label">Impresso · A5 frente e verso</span>
+      <h3 class="mega" data-i18n="fl.title">Flyer de feira</h3>
+      <p data-i18n="fl.copy">A frente vende a promessa; o verso organiza as soluções (Food Service, Private Label, Sob Medida) e leva ao contato com QR code — feito para ser lido em segundos no corredor da feira.</p>
+    </div>
+    <div class="a5 front"><img src="sa-flyer-frente.webp" alt="Flyer A5 frente: Sabor de feito agora. Inteligência no estoque." width="1000" height="1418"></div>
+    <div class="a5 back"><img src="sa-flyer-verso.webp" alt="Flyer A5 verso: Soluções para a sua operação" width="1000" height="1418" loading="lazy"></div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 04/08</span></div>
+  </section>
+
+  <!-- 05 -->
+  <section class="slide s-feed" aria-label="Social media">
+    <div class="head">
+      <div><span class="label" data-i18n="fd.label">Social media · contagem regressiva</span><h3 class="mega" data-i18n="fd.title">Rumo à Anuga</h3></div>
+      <p data-i18n="fd.copy">Sequência de posts que constrói expectativa até a feira: do bastidor de cozinha à contagem de dias, sempre fechando com uma chamada para o stand.</p>
+    </div>
+    <div class="row4">
+      <div class="shot"><img src="sa-feed-10dias.webp" alt="Post: Faltam 10 dias para a Anuga" width="900" height="1125" loading="lazy"></div>
+      <div class="shot"><img src="sa-feed-3dias.webp" alt="Post: 3 dias para a Anuga" width="900" height="1125" loading="lazy"></div>
+      <div class="shot"><img src="sa-feed-palco.webp" alt="Post: Escolhemos o maior palco da América Latina" width="900" height="1125" loading="lazy"></div>
+      <div class="shot"><img src="sa-feed-miseenplace.webp" alt="Post: sua receita exata com nossa tecnologia" width="900" height="1125" loading="lazy"></div>
+    </div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 05/08</span></div>
+  </section>
+
+  <!-- 06 -->
+  <section class="slide s-launch" aria-label="Lançamento">
+    <div class="left">
+      <div>
+        <span class="label" data-i18n="ln.label">Key visual de lançamento</span>
+        <h3 class="mega"><span data-i18n="ln.a">Sabor de</span><br><span class="soft" data-i18n="ln.b">feito agora</span></h3>
+      </div>
+      <div class="facts">
+        <div><span data-i18n="ln.f1">Freezer</span><span>0%</span></div>
+        <div><span data-i18n="ln.f2">Conservantes</span><span>0%</span></div>
+        <div><span data-i18n="ln.f3">Validade</span><span data-i18n="ln.f3v">até 2 anos</span></div>
+        <div><span data-i18n="ln.f4">Preparo</span><span data-i18n="ln.f4v">2 minutos</span></div>
+      </div>
+    </div>
+    <div class="pair">
+      <div class="shot"><img src="sa-post-lancamento.webp" alt="Post: Lançamento oficial na Anuga 2026 — Nos vemos lá" width="900" height="1125" loading="lazy"></div>
+      <div class="shot"><img src="sa-post-stand.webp" alt="Post: 0% freezer, 0% conservantes, 2 anos de validade — Conheça nosso stand" width="900" height="1125" loading="lazy"></div>
+    </div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 06/08</span></div>
+  </section>
+
+  <!-- 07 -->
+  <section class="slide s-lp" aria-label="Landing page">
+    <div class="browser">
+      <div class="chrome"><i></i><i></i><i></i><span>santoalimento.com.br/anuga</span></div>
+      <img src="sa-lp-hero.webp" alt="Landing page Santa Hora — topo" width="1366" height="768" loading="lazy">
+    </div>
+    <div class="scroller" tabindex="0" id="scroller">
+      <img src="sa-lp-completa.webp" alt="Landing page Santa Hora completa" width="1100" height="3516" loading="lazy">
+      <span class="hint" data-i18n="lp.hint">Passe o mouse ↓</span>
+    </div>
+    <div class="right">
+      <div><span class="label" data-i18n="lp.label">Web · conversão</span><h3 class="mega" data-i18n="lp.title">Landing page</h3></div>
+      <p class="copy" data-i18n="lp.copy">Página de captação para agendar degustações técnicas durante a feira: a mesma linguagem da campanha, com a prova (selos, produto, validade) antes do formulário.</p>
+    </div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 07/08</span></div>
+  </section>
+
+  <!-- 08 -->
+  <section class="slide s-end" aria-label="Contato">
+    <h2 class="mega" data-i18n="end.title">Obrigada</h2>
+    <div class="contacts">
+      <div><span class="label">E-mail</span>bmurieldesign@gmail.com</div>
+      <div><span class="label">WhatsApp</span>+55 (41) 99777-9254</div>
+      <div><span class="label">Behance</span><a href="https://www.behance.net/brunamuriel" target="_blank" rel="noopener">behance.net/brunamuriel</a></div>
+    </div>
+    <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 08/08</span></div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var EN = {
+    "nav.back":"← Home","nav.work":"Work.",
+    "cover.role":"Graphic Designer · Curitiba","cover.ed":"2026 Edition",
+    "foot.pf":"Portfolio","foot.pg":"Page",
+    "div.count":"01 featured project","div.a":"Performance","div.b":"design",
+    "sp.svc":"Services","sp.svc.v":"Launch campaign<br>Social media<br>A5 flyer<br>Landing page",
+    "sp.seg":"Industry","sp.seg.v":"Food manufacturing<br>Food service","sp.year":"Year",
+    "intro.copy":"Santo Alimento is a food manufacturer that uses sterilization technology to deliver ready meals with no preservatives, no freezer and up to 2 years of shelf life. To launch the Santa Hora line at <b>Anuga Select Brasil 2026</b>, I built a campaign that turns that promise into a single line: <em>freshly-made flavor, smart inventory.</em> Deep green and food in motion bring the appetite; clear seals answer the buyer's objections.",
+    "fl.label":"Print · A5 front and back","fl.title":"Trade show flyer",
+    "fl.copy":"The front sells the promise; the back lays out the solutions (Food Service, Private Label, Custom) and leads to contact via QR code — built to be read in seconds on the show floor.",
+    "fd.label":"Social media · countdown","fd.title":"Road to Anuga",
+    "fd.copy":"A post sequence that builds anticipation up to the show: from kitchen behind-the-scenes to the day countdown, always closing with a call to visit the booth.",
+    "ln.label":"Launch key visual","ln.a":"Freshly-made","ln.b":"flavor",
+    "ln.f1":"Freezer","ln.f2":"Preservatives","ln.f3":"Shelf life","ln.f3v":"up to 2 years","ln.f4":"Prep time","ln.f4v":"2 minutes",
+    "lp.hint":"Hover ↓","lp.label":"Web · conversion","lp.title":"Landing page",
+    "lp.copy":"Lead page to book technical tastings during the show: the same campaign language, with proof (seals, product, shelf life) placed before the form.",
+    "end.title":"Thank you"
+  };
+  var PT = {};
+  document.querySelectorAll("[data-i18n]").forEach(function(el){ PT[el.dataset.i18n] = el.textContent; });
+  document.querySelectorAll("[data-i18n-html]").forEach(function(el){ PT[el.dataset.i18nHtml] = el.innerHTML; });
+  var lang = "pt";
+  try { var s = localStorage.getItem("bm-lang"); if (s === "en" || s === "pt") lang = s; } catch(e){}
+  function apply(){
+    document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+    document.querySelectorAll("[data-i18n]").forEach(function(el){ var k=el.dataset.i18n; el.textContent = (lang==="en"&&EN[k])||PT[k]; });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){ var k=el.dataset.i18nHtml; el.innerHTML = (lang==="en"&&EN[k])||PT[k]; });
+    document.querySelectorAll("#lang span").forEach(function(s){ s.classList.toggle("on", s.dataset.l === lang); });
+  }
+  document.getElementById("lang").addEventListener("click", function(){
+    lang = lang === "pt" ? "en" : "pt";
+    try { localStorage.setItem("bm-lang", lang); } catch(e){}
+    apply();
+  });
+  apply();
+
+  // landing-page scroller: scroll distance = image height - window height
+  var sc = document.getElementById("scroller");
+  function setH(){ sc.style.setProperty("--h", sc.clientHeight + "px"); }
+  setH(); window.addEventListener("resize", setH);
+
+  // film grain
+  var S=160,c=document.createElement("canvas");c.width=S;c.height=S;
+  var ctx=c.getContext("2d"),img=ctx.createImageData(S,S),frames=[];
+  for(var f=0;f<4;f++){var d=img.data;for(var i=0;i<d.length;i+=4){var v=Math.random()*255|0;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255;}ctx.putImageData(img,0,0);frames.push(c.toDataURL());}
+  var layer=document.createElement("div");layer.setAttribute("aria-hidden","true");
+  layer.style.cssText="position:fixed;inset:0;pointer-events:none;z-index:50;opacity:var(--grain);mix-blend-mode:screen;background-size:"+S+"px "+S+"px;background-image:url("+frames[0]+")";
+  document.body.appendChild(layer);
+  if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){
+    var k=0;setInterval(function(){k=(k+1)%frames.length;layer.style.backgroundImage="url("+frames[k]+")";layer.style.backgroundPosition=(Math.random()*S|0)+"px "+(Math.random()*S|0)+"px";},110);
+  }
+})();
+</script>
+</body>
+</html>
