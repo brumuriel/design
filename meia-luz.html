@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Meia-Luz — Bruna Muriel</title>
-<meta name="description" content="Branding da Meia-Luz, marca de velas aromáticas: logo com Medusa, paleta, elementos gráficos e rótulo.">
+<meta name="description" content="Branding da Meia-Luz, marca de velas aromáticas: logo com Medusa, paleta, elementos gráficos, rótulos e animações.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -104,20 +104,12 @@ img{max-width:100%;display:block}
 .sw .ink-d{color:var(--ameixa-escura)} .sw .ink-l{color:var(--creme)}
 
 /* 05 elements */
-.s-el{background:var(--ameixa-escura);grid-template-rows:auto 1fr;gap:clamp(14px,2vw,28px)}
+.s-el{background:var(--ameixa-escura);aspect-ratio:auto;grid-template-rows:auto auto;gap:clamp(14px,2vw,28px)}
 .s-el .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
 .s-el .mega{font-size:clamp(30px,4.6vw,72px)}
 .s-el .head .copy{color:var(--ink-soft);max-width:46ch}
 .formas{min-height:0;display:grid;place-items:center}
-.formas img{width:100%;height:100%;object-fit:contain;border-radius:clamp(4px,.6vw,10px)}
-
-/* 07 glass */
-.s-glass{background:var(--lavanda);color:var(--ameixa-escura);grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:clamp(18px,3vw,48px)}
-.s-glass .txt{display:flex;flex-direction:column;gap:14px;align-self:start}
-.s-glass .mega{font-size:clamp(46px,8vw,128px)}
-.s-glass .mega .soft{color:var(--tijolo)}
-.s-glass .label,.s-glass .foot{color:var(--ameixa)}
-.s-glass .glass{width:100%;height:100%;object-fit:contain;min-height:0}
+.formas video{width:100%;height:auto;aspect-ratio:16/9;display:block;object-fit:cover;border-radius:clamp(4px,.6vw,10px);background:var(--ameixa)}
 
 /* 06 mockup */
 .s-mock{padding:0;background:#111}
@@ -127,9 +119,25 @@ img{max-width:100%;display:block}
 .s-mock .cap p{margin:0;font-size:clamp(12px,1vw,15px);color:var(--ink-soft)}
 .s-mock .foot{color:#9a8a80}
 
+/* 08 motion */
+.s-motion{background:var(--oliva);aspect-ratio:auto;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto;align-items:end;gap:clamp(16px,2.4vw,32px) clamp(12px,1.6vw,22px)}
+.s-motion .txt{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px clamp(18px,3vw,48px);align-items:end}
+.s-motion .txt .label{grid-column:1 / -1}
+.s-motion .mega{font-size:clamp(40px,7.4vw,120px)}
+.s-motion .mega .soft{color:var(--ambar)}
+.s-motion .side{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.s-motion .copy{color:var(--ink-soft)}
+.s-motion .label,.s-motion .foot{color:#a9a77f}
+.clip{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0;width:100%;max-width:calc(82vh * .8);justify-self:center}
+.clip video{width:100%;height:auto;aspect-ratio:4/5;display:block;border-radius:clamp(6px,.9vw,14px);background:var(--ameixa-escura);object-fit:cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.clip figcaption{font-family:var(--mono);font-size:clamp(10px,.85vw,12px);letter-spacing:.08em;text-transform:uppercase;color:#a9a77f}
+.sound{align-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:none;color:var(--creme);border:1px solid rgba(249,225,185,.35);border-radius:999px;padding:7px 12px;cursor:pointer}
+.sound:hover{border-color:var(--creme)}
+.sound[aria-pressed="true"]{background:var(--creme);color:var(--oliva)}
+
 /* 07 end */
 .s-end{background:var(--chama);color:var(--ameixa-escura);align-content:space-between;grid-template-rows:1fr auto}
-.s-end .mega{font-size:clamp(54px,13vw,190px);align-self:center}
+.s-end .mega{font-size:clamp(34px,calc((100vw - 72px) / 7.4),180px);align-self:center}
 .s-end .contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-top:1px solid rgba(63,32,34,.35);padding-top:16px;font-size:clamp(12px,1.05vw,16px)}
 .s-end .contacts .label,.s-end .foot{color:var(--ameixa)}
 .s-end .contacts .label{display:block;margin-bottom:4px}
@@ -138,6 +146,9 @@ img{max-width:100%;display:block}
 @keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
 
 @media (max-width:860px){
+  .s-motion{grid-template-columns:1fr}
+  .s-motion .txt{grid-template-columns:1fr}
+
   .slide{aspect-ratio:auto;padding-bottom:56px}
   .s-cover,.s-intro,.s-el{grid-template-columns:1fr}
   .s-cover .logo{width:min(80%,360px)}
@@ -145,9 +156,6 @@ img{max-width:100%;display:block}
   .vers{grid-template-columns:1fr}
   .vers figure{aspect-ratio:4/3}
   .sw{grid-template-columns:1fr 1fr}
-  .s-glass{grid-template-columns:1fr}
-  .s-glass .glass{height:auto}
-  .formas img{height:auto}
   .s-mock{aspect-ratio:auto}
   .s-mock img{aspect-ratio:1408/768;height:auto}
   .s-mock .cap{position:static;padding:20px 18px 0}
@@ -234,7 +242,7 @@ img{max-width:100%;display:block}
       <div><span class="label" data-i18n="el.label">Elementos de apoio</span><h3 class="mega" data-i18n-html="el.title">Jardim<br><span class='soft'>à meia-luz</span></h3></div>
       <p class="copy" data-i18n="el.copy">Formas orgânicas recortadas à mão: folhagens, flores, sol e a espiral da serpente. Em blocos de cor da paleta, elas se combinam como azulejos e viram moldura para rótulos, caixas, tags e redes sociais.</p>
     </div>
-    <div class="formas"><img src="ml-formas.svg" alt="Painel de elementos gráficos Meia-Luz: folhagens, flores, sol, espiral e ramo florido em blocos de cor" width="2222" height="1178"></div>
+    <div class="formas"><video src="ml-anim-formas.mp4" poster="ml-anim-formas.webp" autoplay muted loop playsinline preload="metadata" aria-label="Animação dos elementos gráficos Meia-Luz: folhagens, flores, sol e espiral em blocos de cor"></video></div>
     <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 05/08</span></div>
   </section>
 
@@ -249,14 +257,18 @@ img{max-width:100%;display:block}
     <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 06/08</span></div>
   </section>
 
-  <!-- 07 -->
-  <section class="slide s-glass" aria-label="Vela Lavanda">
+  <!-- 08 motion -->
+  <section class="slide s-motion" aria-label="Animações">
     <div class="txt">
-      <span class="label" data-i18n="gl.label">Aplicação · copo de vidro</span>
-      <h3 class="mega" data-i18n-html="gl.title">Lavan<br><span class='soft'>da</span></h3>
-      <p class="copy" data-i18n="gl.copy">Na versão em vidro, a cera tingida faz o papel do rótulo: o logo em oliva é impresso direto no copo, e a cor da vela anuncia a fragrância.</p>
+      <span class="label" data-i18n="mo.label">Motion · redes sociais</span>
+      <h3 class="mega" data-i18n-html="mo.title">Halloween<br><span class='soft'>em movimento</span></h3>
+      <div class="side">
+        <p class="copy" data-i18n="mo.copy">Animações para o Instagram da marca no Halloween: a aranha que desce até a chama e as bruxinhas dançando em volta da vela Lavanda. Formato 4:5, pensado para o feed.</p>
+        <button class="sound" id="sound" type="button" aria-pressed="false"><span class="ic" aria-hidden="true">♪</span> <span data-i18n="mo.sound">Ativar som</span></button>
+      </div>
     </div>
-    <img class="glass" src="ml-mockup-lavanda.webp" alt="Vela Meia-Luz Lavanda em copo de vidro com cera lilás" width="1400" height="949">
+    <figure class="clip"><video src="ml-anim-aranha.mp4" poster="ml-anim-aranha.webp" autoplay muted loop playsinline preload="metadata" aria-label="Animação: aranha descendo sobre a vela Meia-Luz"></video><figcaption data-i18n="mo.c1">Aranha · 8s</figcaption></figure>
+    <figure class="clip"><video id="v-halloween" src="ml-anim-halloween.mp4" poster="ml-anim-halloween.webp" autoplay muted loop playsinline preload="metadata" aria-label="Animação: bruxinhas dançando em volta da vela Meia-Luz Lavanda"></video><figcaption data-i18n="mo.c2">Bruxinhas · 18s · com som</figcaption></figure>
     <div class="foot"><span>Bruna Muriel × <span data-i18n="foot.pf">Portfólio</span> ■ 2026</span><span><span data-i18n="foot.pg">Pág.</span> 07/08</span></div>
   </section>
 
@@ -291,8 +303,9 @@ img{max-width:100%;display:block}
     "el.copy":"Hand-cut organic shapes: foliage, flowers, a sun and the serpent's spiral. Set in colour blocks from the palette, they combine like tiles and frame labels, boxes, tags and social media.",
     "mk.label":"Application · label","mk.title":"Concrete<br><span class='soft'>jar</span>",
     "mk.copy":"The emblem at the centre, framed by the shape tiles: each fragrance gets its own colour combination.",
-    "gl.label":"Application · glass","gl.title":"Laven<br><span class='soft'>der</span>",
-    "gl.copy":"In the glass version the tinted wax does the label's job: the olive logo is printed straight on the glass, and the candle's colour announces the fragrance.",
+    "mo.label":"Motion · social media","mo.title":"Halloween<br><span class='soft'>in motion</span>",
+    "mo.copy":"Halloween animations for the brand's Instagram: a spider dropping down toward the flame and little witches dancing around the Lavender candle. 4:5 format, made for the feed.",
+    "mo.sound":"Turn sound on","mo.soundOff":"Turn sound off","mo.c1":"Spider · 8s","mo.c2":"Witches · 18s · with sound",
     "end.title":"Thank you"
   };
   var PT = {};
@@ -313,6 +326,13 @@ img{max-width:100%;display:block}
   });
   apply();
 
+
+  var sb=document.getElementById("sound"), vh=document.getElementById("v-halloween");
+  if(sb&&vh){ sb.addEventListener("click",function(){ var on=vh.muted; vh.muted=!on; if(on){ try{vh.currentTime=0;}catch(e){} var p=vh.play(); if(p&&p.catch)p.catch(function(){}); }
+    sb.setAttribute("aria-pressed",on?"true":"false");
+    var lbl=sb.querySelector("[data-i18n]"); var en=document.documentElement.lang==="en";
+    lbl.textContent = on ? (en?"Turn sound off":"Desativar som") : (en?"Turn sound on":"Ativar som"); }); }
+  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){ document.querySelectorAll(".clip video").forEach(function(v){ v.removeAttribute("autoplay"); v.pause(); v.controls=true; }); }
   var S=160,c=document.createElement("canvas");c.width=S;c.height=S;
   var ctx=c.getContext("2d"),img=ctx.createImageData(S,S),frames=[];
   for(var f=0;f<4;f++){var d=img.data;for(var i=0;i<d.length;i+=4){var v=Math.random()*255|0;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255;}ctx.putImageData(img,0,0);frames.push(c.toDataURL());}
