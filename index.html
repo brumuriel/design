@@ -36,6 +36,7 @@
 
 <div class="strip" aria-label="Projetos em destaque">
   <div class="track" id="track"></div>
+  <div class="strip-ctrl"><span class="mono-hint" data-i18n="strip.hint">Arraste ou use as setas</span><button class="strip-nav prev" id="prev" type="button" aria-label="Projeto anterior">←</button><button class="strip-nav next" id="next" type="button" aria-label="Próximo projeto">→</button></div>
 </div>
 
 <div class="wrap">
@@ -224,13 +225,14 @@ window.I18N_EN = {
       "ft.made":"Designed in Curitiba, BR","ft.top":"Back to top ↑",
       "tile.see":"View case ↗"};
 window.I18N_EN["tile.see"]="View project →";
+window.I18N_EN["strip.hint"]="Drag or use the arrows";
 window.I18N_PT = {"ct.copied":"Copiado","tile.see":"Ver projeto →"};
 (function(){
   var projects = [{"slug": "meia-luz", "t": "Meia-Luz", "full": "Meia-Luz", "c": {"pt": "Branding · Velas aromáticas", "en": "Branding · Scented candles"}, "y": "2026", "cover": "ml-mockup-vela.webp"},{"slug": "santo-alimento", "t": "Santo Alimento", "full": "Santo Alimento × Santa Hora", "c": {"pt": "Campanha · Indústria de alimentos", "en": "Campaign · Food industry"}, "y": "2026", "cover": "sa-feed-01.webp"},{"slug": "anarco", "t": "Anarco", "full": "Anarco Restaurant", "c": {"pt": "Identidade Visual · Restaurante", "en": "Visual Identity · Restaurant"}, "y": "2025", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/9b812a225993903.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "bringit", "t": "bringIT", "full": "bringIT", "c": {"pt": "Campanhas & Performance", "en": "Campaigns & Performance"}, "y": "2025", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/ded23a225885359.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "troc", "t": "TROC", "full": "TROC | Arezzo&Co", "c": {"pt": "Moda Circular · Campanhas", "en": "Circular Fashion · Campaigns"}, "y": "2023", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/a8e823169679973.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"}, {"slug": "transcriativa", "t": "Trans­criativa", "full": "@transcriativa", "c": {"pt": "Mídias Sociais", "en": "Social Media"}, "y": "2020", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/191b45101455155.Y3JvcCwxNDE2LDExMDcsNTYsNDU.png"}, {"slug": "pontomais", "t": "Pontomais", "full": "Pontomais", "c": {"pt": "Branding · SaaS", "en": "Branding · SaaS"}, "y": "2019", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/f271a289563973.Y3JvcCwxMzgwLDEwNzksNzgsMTM.png"}, {"slug": "startup-weekend-women", "t": "SW Women", "full": "Startup Weekend Women Curitiba", "c": {"pt": "Identidade de Evento", "en": "Event Identity"}, "y": "2019", "cover": "https://mir-s3-cdn-cf.behance.net/projects/808/c9e49783041361.Y3JvcCw4MDgsNjMyLDE3MCww.png"}];
   window.BM_render = function(lang){
     var t = window.BM ? window.BM.t : function(k){return k};
     var html = "";
-    for (var r=0;r<2;r++) projects.forEach(function(p){
+    for (var r=0;r<1;r++) projects.forEach(function(p){
       html += '<a class="tile" href="'+p.slug+'.html"'+(r?' aria-hidden="true" tabindex="-1"':'')+'>'+
         '<img class="cover" src="'+p.cover+'" alt="" loading="lazy">'+
         '<span class="mono"><span>'+p.c[lang]+'</span><span>'+p.y+'</span></span>'+
@@ -245,5 +247,35 @@ window.I18N_PT = {"ct.copied":"Copiado","tile.see":"Ver projeto →"};
 })();
 </script>
 <script src="site.js"></script>
+<script>
+(function(){
+  var tr=document.getElementById("track"), pv=document.getElementById("prev"), nx=document.getElementById("next");
+  if(!tr) return;
+  function step(){ var t=tr.querySelector(".tile"); return t ? t.getBoundingClientRect().width + 16 : 300; }
+  function atEnd(){ return tr.scrollLeft + tr.clientWidth >= tr.scrollWidth - 4; }
+  function upd(){ pv.disabled = tr.scrollLeft <= 4; nx.disabled = atEnd(); }
+  pv.addEventListener("click",function(){ tr.scrollBy({left:-step(),behavior:"smooth"}); hold(); });
+  nx.addEventListener("click",function(){ tr.scrollBy({left:step(),behavior:"smooth"}); hold(); });
+  tr.addEventListener("scroll",upd,{passive:true}); window.addEventListener("resize",upd);
+  tr.addEventListener("keydown",function(e){ if(e.key==="ArrowRight"){nx.click();e.preventDefault();} if(e.key==="ArrowLeft"){pv.click();e.preventDefault();} });
+  tr.setAttribute("tabindex","0");
+  // drag with the mouse
+  var down=false, sx=0, sl=0, moved=false;
+  tr.addEventListener("pointerdown",function(e){ if(e.pointerType!=="mouse") return; down=true; moved=false; sx=e.clientX; sl=tr.scrollLeft; hold(); });
+  window.addEventListener("pointermove",function(e){ if(!down) return; var dx=e.clientX-sx; if(Math.abs(dx)>4){ moved=true; tr.classList.add("dragging"); } tr.scrollLeft=sl-dx; });
+  window.addEventListener("pointerup",function(){ if(!down) return; down=false; setTimeout(function(){ tr.classList.remove("dragging"); },0); });
+  tr.addEventListener("click",function(e){ if(moved){ e.preventDefault(); moved=false; } },true);
+  // gentle auto-advance; pauses while the visitor interacts
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var paused=false, until=0;
+  function hold(){ until=Date.now()+8000; }
+  ["mouseenter","focusin","touchstart"].forEach(function(ev){ tr.parentElement.addEventListener(ev,function(){ paused=true; hold(); },{passive:true}); });
+  ["mouseleave","focusout"].forEach(function(ev){ tr.parentElement.addEventListener(ev,function(){ paused=false; },{passive:true}); });
+  tr.addEventListener("touchend",function(){ paused=false; hold(); },{passive:true});
+  if(!reduce) setInterval(function(){ if(paused||Date.now()<until||document.hidden) return; if(atEnd()) tr.scrollTo({left:0,behavior:"smooth"}); else tr.scrollBy({left:step(),behavior:"smooth"}); },3500);
+  setTimeout(upd,300);
+})();
+</script>
+
 </body>
 </html>

@@ -77,10 +77,17 @@ a{color:inherit}
 .avail{display:inline-flex;gap:10px;align-items:center;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
 
 /* strip */
-.strip{overflow:hidden;border-block:1px solid var(--line);padding-block:18px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.track{display:flex;gap:16px;width:max-content;animation:slide 60s linear infinite}
-.strip:hover .track{animation-play-state:paused}
-@keyframes slide{to{transform:translateX(-50%)}}
+.strip{position:relative;border-block:1px solid var(--line);padding-block:18px}
+.track{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);padding-inline:var(--gutter);scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.track.dragging{cursor:grabbing;scroll-snap-type:none}
+.track.dragging .tile{pointer-events:none}
+.tile{scroll-snap-align:start}
+.strip-ctrl{display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:14px var(--gutter) 0}
+.mono-hint{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);margin-right:auto}
+.strip-nav{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink);font-family:var(--mono);font-size:16px;cursor:pointer;display:grid;place-items:center;transition:background .2s,border-color .2s,opacity .2s}
+.strip-nav:hover{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.strip-nav[disabled]{opacity:.25;cursor:default;pointer-events:none}
 .tile{
   flex:0 0 auto;width:clamp(220px,26vw,340px);aspect-ratio:4/3;
   background:var(--raise);border:1px solid var(--line);border-radius:4px;
