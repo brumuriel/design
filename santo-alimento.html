@@ -30,7 +30,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 :focus-visible{outline:1px solid var(--ink);outline-offset:4px}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;
   padding:14px var(--gutter);font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
@@ -115,6 +115,7 @@ img{max-width:100%;display:block}
 /* 07 landing page */
 .s-lp{grid-template-columns:minmax(0,1.5fr) minmax(0,.62fr) minmax(0,.9fr);gap:clamp(14px,2.2vw,32px);align-items:stretch}
 .browser{border:1px solid var(--line);border-radius:clamp(6px,.9vw,12px);overflow:hidden;background:var(--slide-2);display:flex;flex-direction:column;align-self:center}
+.browser img{width:100%;height:auto;aspect-ratio:1366/768;object-fit:cover}
 .browser .chrome{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--line)}
 .browser .chrome i{width:8px;height:8px;border-radius:50%;background:#3a3a40;display:block}
 .browser .chrome span{margin-left:8px;font-family:var(--mono);font-size:10px;color:var(--ink-mute);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}

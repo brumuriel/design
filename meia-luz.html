@@ -39,7 +39,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 :focus-visible{outline:1px solid var(--ink);outline-offset:4px}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;
   padding:14px var(--gutter);font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
@@ -121,11 +121,11 @@ img{max-width:100%;display:block}
 
 /* 08 motion */
 .s-motion{background:var(--oliva);aspect-ratio:auto;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto;align-items:end;gap:clamp(16px,2.4vw,32px) clamp(12px,1.6vw,22px)}
-.s-motion .txt{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px clamp(18px,3vw,48px);align-items:end}
-.s-motion .txt .label{grid-column:1 / -1}
-.s-motion .mega{font-size:clamp(40px,7.4vw,120px)}
+.s-motion .txt{grid-column:1 / -1;display:flex;flex-direction:column;gap:clamp(12px,1.4vw,18px)}
+.s-motion .mega{font-size:clamp(30px,min(7.4vw,calc((100vw - 72px) / 7.8)),120px)}
 .s-motion .mega .soft{color:var(--ambar)}
-.s-motion .side{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.s-motion .side{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
+.s-motion .side .copy{max-width:60ch}
 .s-motion .copy{color:var(--ink-soft)}
 .s-motion .label,.s-motion .foot{color:#a9a77f}
 .clip{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0;width:100%;max-width:calc(82vh * .8);justify-self:center}
@@ -147,7 +147,6 @@ img{max-width:100%;display:block}
 
 @media (max-width:860px){
   .s-motion{grid-template-columns:1fr}
-  .s-motion .txt{grid-template-columns:1fr}
 
   .slide{aspect-ratio:auto;padding-bottom:56px}
   .s-cover,.s-intro,.s-el{grid-template-columns:1fr}
